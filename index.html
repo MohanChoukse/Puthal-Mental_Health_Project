@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Puthal - Mental Health Reimagined</title>
-
+    <link rel="icon" type="image/png" href="/img/logo.png" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -19,90 +20,106 @@
       rel="stylesheet"
     />
   </head>
-  <body style="font-family: 'Poppins', sans-serif; margin: 0; padding: 0">
-    <!-- Header -->
-    <header>
-      <h1>Puthal</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Join Us</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="icons">
-          <a href="#"><i class="ri-search-line"></i></a>
-        </div>
-      </nav>
+  <body>
+   
+    <header class="header">
+      <div class="header-content">
+        <h1 class="logo">Puthal</h1>
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Join Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <div class="search-btn">
+            <i class="ri-search-line"></i>
+          </div>
+        </nav>
+      </div>
     </header>
-    <hr />
-    <!-- Hero Section -->
-    <section>
-      <h2>Mental Health Well-being Reimagined</h2>
-      <p>
-        Empowering individuals to prioritize their mental well-being through
-        innovative technology.
-      </p>
-      <div>
-        <a href="#">Download on the App Store</a>
-        <a href="#">Get it on Google Play</a>
-      </div>
-      <div>
-        <p><img src="#" alt="Mobile App photo" /></p>
-      </div>
-    </section>
-    <hr />
-    <!-- Features Section -->
-    <section>
-      <h2>Features</h2>
-      <div>
-        <article>
-          <h3>AI Mood Tracking</h3>
-          <p>AI-driven mood monitoring</p>
-        </article>
-        <article>
-          <h3>Mindfulness Exercises</h3>
-          <p>Exercises for inner peace</p>
-        </article>
-        <article>
-          <h3>Therapy & Counseling</h3>
-          <p>Professional support & resources</p>
-        </article>
-        <article>
-          <h3>Community Support</h3>
-          <p>Connect with others</p>
-        </article>
-      </div>
-    </section>
-    <hr />
-    <!-- Footer -->
-    <footer>
-      <section>
-        <h2>Quick Links</h2>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Join Us</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </section>
 
-      <section>
-        <h2>Follow Us</h2>
-        <ul>
-          <li><a href="https://www.instagram.com/theputhal/">Instagram</a></li>
-          <li>
-            <a href="https://www.linkedin.com/company/theputhal/">LinkedIn</a>
-          </li>
-        </ul>
-      </section>
-      <hr />
-      <section>
+   
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-text">
+          <h2 class="hero-title">Mental Health Well-being Reimagined</h2>
+          <p class="hero-desc">
+            Empowering individuals to prioritize their mental well-being through
+            innovative technology.
+          </p>
+          <div class="dnload-btns">
+            <a href="#" class="dnload-btn"><i class="ri-apple-fill"></i> Download on the App Store</a>
+            <a href="#" class="dnload-btn google"><i class="ri-google-play-fill"></i> Get it on Google Play</a>
+            <!-- <a href="#" class="down"><i class="ri--fill"></i> Play</a> -->
+
+          </div>
+        </div>
+        <div class="hero-img">
+          <img src="img/app_img.png" alt="Mobile App photo" />
+        </div>
+      </div>
+    </section>
+
+  
+    <section class="features">
+      <div class="features-container">
+        <h2 class="features-title">Features</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <i class="ri-brain-line feature-icon"></i>
+            <h3 class="feature-title">AI Mood Tracking</h3>
+            <p class="feature-desc">AI-driven mood monitoring</p>
+          </div>
+          <div class="feature-card">
+            <i class="ri-mental-health-line feature-icon"></i>
+            <h3 class="feature-title">Mindfulness Exercises</h3>
+            <p class="feature-desc">Exercises for inner peace</p>
+          </div>
+          <div class="feature-card">
+            <i class="ri-user-heart-line feature-icon"></i>
+            <h3 class="feature-title">Therapy & Counseling</h3>
+            <p class="feature-desc">Professional support & resources</p>
+          </div>
+          <div class="feature-card">
+            <i class="ri-group-line feature-icon"></i>
+            <h3 class="feature-title">Community Support</h3>
+            <p class="feature-desc">Connect with others</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- foterr -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Join Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3 class="footer-title">Follow Us</h3>
+          <ul class="footer-links">
+            <li><a href="https://www.instagram.com/theputhal/"><i class="ri-instagram-line"></i> Instagram</a></li>
+            <li>
+              <a href="https://www.linkedin.com/company/theputhal/"><i class="ri-linkedin-box-line"></i> LinkedIn</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
         <p><a href="#">Privacy Policy</a> | © 2025 Puthal</p>
-      </section>
+        <!-- <p><a href="">Privacy Policy</p> -->
+     
+      </div>
     </footer>
-    <hr />
   </body>
 </html>
