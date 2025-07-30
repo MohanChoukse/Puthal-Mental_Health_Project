@@ -88,14 +88,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 **Mohan Choukse**
 - GitHub: [@mohanchoukse](https://github.com/mohanchoukse)
 
-## 💡 Future Enhancements
-
-- User authentication system
-- Real-time mood tracking
-- Integration with mental health professionals
-- Community forums and support groups
-- Personalized wellness recommendations
-
 ---
-
-**Note:** This is a frontend demonstration project. For production use, additional backend services and security measures would be required.
