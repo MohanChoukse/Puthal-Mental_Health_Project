@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - Puthal</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="/img/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="auth-container">
+      <a href="index.html" class="back-to-home">
+        <i class="ri-arrow-left-line"></i>
+        Back to Home
+      </a>
+      <div class="auth-card">
+        <div class="auth-header">
+          <div class="auth-logo">Puthal</div>
+          <h1 class="auth-title">Create Account</h1>
+          <p class="auth-subtitle">Join us and start your journey</p>
+        </div>
+
+        <form id="signupForm" class="auth-form">
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              class="form-input"
+              placeholder="Full Name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              class="form-input"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="password"
+              id="password"
+              class="form-input"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="password"
+              id="confirmPassword"
+              class="form-input"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
+
+          <button type="submit" id="signupBtn" class="auth-btn">
+            <span id="signupBtnText">Create Account</span>
+            <span
+              id="signupBtnLoader"
+              class="loading"
+              style="display: none"
+            ></span>
+          </button>
+        </form>
+
+        <div class="divider">
+          <span>or</span>
+        </div>
+
+        <button id="googleSignupBtn" class="google-signin-btn">
+          <div class="google-icon"></div>
+          <span id="googleSignupBtnText">Sign up with Google</span>
+          <span
+            id="googleSignupBtnLoader"
+            class="loading"
+            style="display: none"
+          ></span>
+        </button>
+
+        <div id="signupMessage"></div>
+
+        <div class="auth-links">
+          <span>Already have an account?</span>
+          <a href="login.html">Sign In</a>
+        </div>
+      </div>
+    </div>
+
+   
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script type="module" src="signup.js"></script>
+  </body>
+</html>

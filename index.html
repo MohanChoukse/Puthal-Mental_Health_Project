@@ -19,9 +19,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="navbar.js"></script>
   </head>
   <body>
-   
     <header class="header">
       <div class="header-content">
         <h1 class="logo">Puthal</h1>
@@ -33,14 +34,19 @@
             <li><a href="#">Join Us</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
-          <div class="search-btn">
-            <i class="ri-search-line"></i>
+          <div class="nav-right">
+            <div class="search-btn">
+              <i class="ri-search-line"></i>
+            </div>
+            <div class="auth-buttons">
+              <a href="login.html" class="auth-nav-btn login">Sign In</a>
+              <a href="signup.html" class="auth-nav-btn signup">Sign Up</a>
+            </div>
           </div>
         </nav>
       </div>
     </header>
 
-   
     <section class="hero">
       <div class="hero-container">
         <div class="hero-text">
@@ -50,10 +56,13 @@
             innovative technology.
           </p>
           <div class="dnload-btns">
-            <a href="#" class="dnload-btn"><i class="ri-apple-fill"></i> Download on the App Store</a>
-            <a href="#" class="dnload-btn google"><i class="ri-google-play-fill"></i> Get it on Google Play</a>
+            <a href="#" class="dnload-btn"
+              ><i class="ri-apple-fill"></i> Download on the App Store</a
+            >
+            <a href="#" class="dnload-btn google"
+              ><i class="ri-google-play-fill"></i> Get it on Google Play</a
+            >
             <!-- <a href="#" class="down"><i class="ri--fill"></i> Play</a> -->
-
           </div>
         </div>
         <div class="hero-img">
@@ -62,7 +71,6 @@
       </div>
     </section>
 
-  
     <section class="features">
       <div class="features-container">
         <h2 class="features-title">Features</h2>
@@ -95,30 +103,46 @@
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-section">
+          <h3 class="footer-title">About Us</h3>
+          <p class="footer-about">
+            Puthal is dedicated to revolutionizing mental health care through
+            innovative technology. We empower individuals to prioritize their
+            well-being with AI-driven mood tracking, mindfulness exercises, and
+            professional support resources.
+          </p>
+        </div>
+
+        <div class="footer-section">
           <h3 class="footer-title">Quick Links</h3>
           <ul class="footer-links">
-            <li><a href="#">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Join Us</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Signup</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </div>
 
         <div class="footer-section">
-          <h3 class="footer-title">Follow Us</h3>
+          <h3 class="footer-title">Social Media</h3>
           <ul class="footer-links">
-            <li><a href="https://www.instagram.com/theputhal/"><i class="ri-instagram-line"></i> Instagram</a></li>
+            <!-- <li><a href="mailto:contact@puthal.com"><i class="ri-mail-line"></i> contact@puthal.com</a></li>
+            <li><a href="tel:+1234567890"><i class="ri-phone-line"></i> +1 (234) 567-890</a></li> -->
             <li>
-              <a href="https://www.linkedin.com/company/theputhal/"><i class="ri-linkedin-box-line"></i> LinkedIn</a>
+              <a href="https://www.instagram.com/theputhal/"
+                ><i class="ri-instagram-line"></i> Instagram</a
+              >
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/theputhal/"
+                ><i class="ri-linkedin-box-line"></i> LinkedIn</a
+              >
             </li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <p><a href="#">Privacy Policy</a> | © 2025 Puthal</p>
-        <!-- <p><a href="">Privacy Policy</p> -->
-     
       </div>
     </footer>
   </body>

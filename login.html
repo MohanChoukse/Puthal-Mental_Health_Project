@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In - Puthal</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="/img/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="auth-container">
+      <a href="index.html" class="back-to-home">
+        <i class="ri-arrow-left-line"></i>
+        Back to Home
+      </a>
+      <div class="auth-card">
+        <div class="auth-header">
+          <div class="auth-logo">Puthal</div>
+          <h1 class="auth-title">Welcome Back</h1>
+          <p class="auth-subtitle">Sign in to your account</p>
+        </div>
+
+        <form id="loginForm" class="auth-form">
+          <div class="form-group">
+            <input
+              type="email"
+              id="loginEmail"
+              class="form-input"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="password"
+              id="loginPassword"
+              class="form-input"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <div class="remember-me">
+            <input type="checkbox" id="rememberMe" />
+            <label for="rememberMe">Remember Me</label>
+          </div>
+
+          <button type="submit" id="loginBtn" class="auth-btn">
+            <span id="loginBtnText">Sign In</span>
+            <span
+              id="loginBtnLoader"
+              class="loading"
+              style="display: none"
+            ></span>
+          </button>
+        </form>
+
+        <div class="divider">
+          <span>or</span>
+        </div>
+
+        <button id="googleLoginBtn" class="google-signin-btn">
+          <div class="google-icon"></div>
+          <span id="googleLoginBtnText">Sign in with Google</span>
+          <span
+            id="googleLoginBtnLoader"
+            class="loading"
+            style="display: none"
+          ></span>
+        </button>
+
+        <div id="loginMessage"></div>
+
+        <div class="auth-links">
+          <span>Don't have an account?</span>
+          <a href="signup.html">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script type="module" src="login.js"></script>
+  </body>
+</html>
