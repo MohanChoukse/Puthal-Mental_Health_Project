@@ -6,6 +6,7 @@ import {
   browserSessionPersistence,
   googleProvider,
   signInWithPopup,
+  sendPasswordResetEmail,
 } from "./firebase.js";
 
 const loginForm = document.getElementById("loginForm");
@@ -277,5 +278,123 @@ googleLoginBtn.addEventListener("click", async () => {
     showMessage(errorMessage);
   } finally {
     setGoogleLoading(false);
+  }
+});
+
+// Forgot Password Modal Elements
+const forgotPasswordLink = document.getElementById("forgotPasswordLink");
+const forgotPasswordModal = document.getElementById("forgotPasswordModal");
+const closeModal = document.querySelector(".close-modal");
+const forgotPasswordForm = document.getElementById("forgotPasswordForm");
+const resetEmail = document.getElementById("resetEmail");
+const resetPasswordBtn = document.getElementById("resetPasswordBtn");
+const resetBtnText = document.getElementById("resetBtnText");
+const resetBtnLoader = document.getElementById("resetBtnLoader");
+const resetMessage = document.getElementById("resetMessage");
+const backToLoginBtn = document.getElementById("backToLoginBtn");
+
+// Function to set loading state for reset password button
+function setResetLoading(loading) {
+  if (loading) {
+    resetPasswordBtn.disabled = true;
+    resetBtnText.style.display = "none";
+    resetBtnLoader.style.display = "inline-block";
+  } else {
+    resetPasswordBtn.disabled = false;
+    resetBtnText.style.display = "inline";
+    resetBtnLoader.style.display = "none";
+  }
+}
+
+// Open forgot password modal
+forgotPasswordLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  forgotPasswordModal.style.display = "block";
+  resetEmail.value = emailInput.value; // Pre-fill with login email if available
+});
+
+// Close modal when clicking on X
+closeModal.addEventListener("click", () => {
+  forgotPasswordModal.style.display = "none";
+});
+
+// Close modal when clicking outside of it
+window.addEventListener("click", (e) => {
+  if (e.target === forgotPasswordModal) {
+    forgotPasswordModal.style.display = "none";
+  }
+});
+
+// Back to login button
+backToLoginBtn.addEventListener("click", () => {
+  forgotPasswordModal.style.display = "none";
+});
+
+// Handle forgot password form submission
+forgotPasswordForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const email = resetEmail.value.trim();
+  resetMessage.innerHTML = "";
+
+  let isValid = true;
+
+  if (!email) {
+    validateInput(resetEmail, false);
+    showMessage("Please enter your email address", "error");
+    isValid = false;
+  } else if (!email.includes("@") || !email.includes(".")) {
+    validateInput(resetEmail, false);
+    showMessage("Please enter a valid email address", "error");
+    isValid = false;
+  } else {
+    validateInput(resetEmail, true);
+  }
+
+  if (!isValid) {
+    return;
+  }
+
+  setResetLoading(true);
+
+  try {
+    await sendPasswordResetEmail(auth, email);
+    showMessage(
+      "Reset link has been sent! Please check your email.",
+      "success"
+    );
+    setTimeout(() => {
+      forgotPasswordModal.style.display = "none";
+    }, 3000);
+  } catch (error) {
+    console.error("Password reset error:", error);
+
+    let errorMessage =
+      "An error occurred during password reset. Please try again.";
+
+    switch (error.code) {
+      case "auth/user-not-found":
+        // For security reasons, we don't specifically say the email doesn't exist
+        errorMessage =
+          "If this email is registered, you will receive a reset link.";
+        break;
+      case "auth/invalid-email":
+        errorMessage = "Please enter a valid email address.";
+        validateInput(resetEmail, false);
+        break;
+      case "auth/too-many-requests":
+        errorMessage = "Too many requests. Please try again later.";
+        break;
+      case "auth/network-request-failed":
+        errorMessage =
+          "Network error. Please check your internet connection and try again.";
+        break;
+      default:
+        errorMessage = error.message || errorMessage;
+    }
+
+    showMessage(errorMessage, "error");
+  } finally {
+    setResetLoading(false);
   }
 });

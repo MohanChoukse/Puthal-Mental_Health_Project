@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Puthal</title>
+    <title>Dashboard - Puthal</title>
     <link rel="icon" type="image/png" href="/img/logo.png" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
@@ -12,17 +12,20 @@
     <link rel="stylesheet" href="style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <script type="module" src="firebase.js"></script>
     <script type="module" src="navbar.js"></script>
+    <script type="module" src="auth-check.js"></script>
+    <script src="animations.js"></script>
   </head>
   <body>
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+    </div>
     <header class="header">
       <div class="header-content">
         <a href="/index.html" class="logo-link">
@@ -36,11 +39,11 @@
             <i class="ri-menu-line"></i>
           </div>
           <ul class="nav-menu">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#features" class="nav-link">Features</a></li>
-            <!-- <li><a href="#" class="nav-link">Join Us</a></li> -->
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <!-- <li><a href="#">Join Us</a></li> -->
+            <li><a href="index.html#contact">Contact</a></li>
           </ul>
           <div class="nav-right">
             <div class="search-btn">
@@ -56,57 +59,60 @@
     </header>
     <div class="nav-overlay"></div>
 
-    <section class="hero" id="home">
-      <div class="hero-container">
-        <div class="hero-text">
-          <h2 class="hero-title">Mental Health Well-being Reimagined</h2>
-          <p class="hero-desc">
-            Empowering individuals to prioritize their mental well-being through
-            innovative technology.
-          </p>
-          <div class="dnload-btns">
-            <a href="#" class="dnload-btn"
-              ><i class="ri-apple-fill"></i> Download on the App Store</a
-            >
-            <a href="#" class="dnload-btn google"
-              ><i class="ri-google-play-fill"></i> Get it on Google Play</a
-            >
-            <!-- <a href="#" class="down"><i class="ri--fill"></i> Play</a> -->
-          </div>
-        </div>
-        <div class="hero-img">
-          <img src="img/app_img.png" alt="Mobile App photo" />
-        </div>
+    <main class="dashboard-container">
+      <div class="dashboard-welcome fade-in">
+        <h1>Dashboard</h1>
+        <div id="welcomeMessage" class="welcome-banner"></div>
       </div>
-    </section>
 
-    <section class="features" id="features">
-      <div class="features-container">
-        <h2 class="features-title">Features</h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <i class="ri-brain-line feature-icon"></i>
-            <h3 class="feature-title">AI Mood Tracking</h3>
-            <p class="feature-desc">AI-driven mood monitoring</p>
-          </div>
-          <div class="feature-card">
-            <i class="ri-mental-health-line feature-icon"></i>
-            <h3 class="feature-title">Mindfulness Exercises</h3>
-            <p class="feature-desc">Exercises for inner peace</p>
-          </div>
-          <div class="feature-card">
-            <i class="ri-user-heart-line feature-icon"></i>
-            <h3 class="feature-title">Therapy & Counseling</h3>
-            <p class="feature-desc">Professional support & resources</p>
-          </div>
-          <div class="feature-card">
-            <i class="ri-group-line feature-icon"></i>
-            <h3 class="feature-title">Community Support</h3>
-            <p class="feature-desc">Connect with others</p>
-          </div>
+      <div class="dashboard-content fade-in">
+        <div class="dashboard-card">
+          <i class="ri-bar-chart-box-line card-icon"></i>
+          <h2>Mood Analytics</h2>
+          <p>View your mood patterns and trends over time</p>
+          <a href="#" class="dashboard-btn">View Analytics</a>
+        </div>
+
+        <div class="dashboard-card">
+          <i class="ri-mental-health-line card-icon"></i>
+          <h2>Daily Meditation</h2>
+          <p>Continue your mindfulness practice with guided sessions</p>
+          <a href="#" class="dashboard-btn">Start Session</a>
+        </div>
+
+        <div class="dashboard-card">
+          <i class="ri-book-2-line card-icon"></i>
+          <h2>Journal Entries</h2>
+          <p>Record your thoughts and reflect on your progress</p>
+          <a href="#" class="dashboard-btn">Write Entry</a>
+        </div>
+
+        <div class="dashboard-card">
+          <i class="ri-flag-line card-icon"></i>
+          <h2>Wellness Goals</h2>
+          <p>Set and track your mental health objectives</p>
+          <a href="#" class="dashboard-btn">Set Goals</a>
+        </div>
+
+        <div class="dashboard-card">
+          <i class="ri-calendar-check-line card-icon"></i>
+          <h2>Appointments</h2>
+          <p>Manage your therapy sessions and reminders</p>
+          <a href="#" class="dashboard-btn">Schedule</a>
+        </div>
+
+        <div class="dashboard-card">
+          <i class="ri-team-line card-icon"></i>
+          <h2>Community</h2>
+          <p>Connect with others on similar wellness journeys</p>
+          <a href="#" class="dashboard-btn">Join Now</a>
         </div>
       </div>
-    </section>
+    </main>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script type="module" src="dashboard.js"></script>
 
     <footer class="footer">
       <div class="footer-container">
@@ -185,6 +191,15 @@
         <p><a href="#">Privacy Policy</a> | © 2025 Puthal</p>
       </div>
     </footer>
+
+    <!-- Coming Soon Modal -->
+    <div id="comingSoonModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Coming Soon!</h2>
+        <p>This feature is under development and will be available shortly.</p>
+      </div>
+    </div>
 
     <!-- Search Modal -->
     <div id="searchModal" class="search-modal">

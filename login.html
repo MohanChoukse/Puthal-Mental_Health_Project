@@ -45,6 +45,10 @@
             />
           </div>
 
+          <div class="forgot-password-link">
+            <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+          </div>
+
           <div class="remember-me">
             <input type="checkbox" id="rememberMe" />
             <label for="rememberMe">Remember Me</label>
@@ -86,5 +90,41 @@
     <div class="toast-container" id="toastContainer"></div>
 
     <script type="module" src="login.js"></script>
+    <!-- Add this modal for forgot password -->
+    <div id="forgotPasswordModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Password Reset</h2>
+        <p>
+          Enter your registered email address and we'll send you a password
+          reset link.
+        </p>
+        <form id="forgotPasswordForm">
+          <div class="form-group">
+            <input
+              type="email"
+              id="resetEmail"
+              class="form-input"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+          <button type="submit" id="resetPasswordBtn" class="auth-btn">
+            <span id="resetBtnText">Send Reset Link</span>
+            <span
+              id="resetBtnLoader"
+              class="loading"
+              style="display: none"
+            ></span>
+          </button>
+        </form>
+        <div id="resetMessage"></div>
+        <div class="modal-footer">
+          <button id="backToLoginBtn" class="secondary-btn">
+            Back to Login
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
