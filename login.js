@@ -281,7 +281,6 @@ googleLoginBtn.addEventListener("click", async () => {
   }
 });
 
-// Forgot Password Modal Elements
 const forgotPasswordLink = document.getElementById("forgotPasswordLink");
 const forgotPasswordModal = document.getElementById("forgotPasswordModal");
 const closeModal = document.querySelector(".close-modal");
@@ -374,7 +373,6 @@ forgotPasswordForm.addEventListener("submit", async (e) => {
 
     switch (error.code) {
       case "auth/user-not-found":
-        // For security reasons, we don't specifically say the email doesn't exist
         errorMessage =
           "If this email is registered, you will receive a reset link.";
         break;
